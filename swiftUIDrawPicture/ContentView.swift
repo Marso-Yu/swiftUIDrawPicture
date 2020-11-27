@@ -464,7 +464,39 @@ struct DrawView: UIViewRepresentable {
         leftLayer.lineWidth = 1
         view.layer.addSublayer(leftLayer)
         
- 
+        
+        
+        
+        //pokeBall
+        let aDegree = CGFloat.pi / 180
+        
+        let pokeBallRed = UIBezierPath(arcCenter: CGPoint(x: 214, y: 500), radius: 40, startAngle: aDegree * 0, endAngle: aDegree * 360, clockwise: true)
+        
+        let pokeBallRedLayer = CAShapeLayer()
+        pokeBallRedLayer.path = pokeBallRed.cgPath
+        pokeBallRedLayer.fillColor = UIColor(red: 196/255, green: 75/255, blue: 74/255, alpha: 1).cgColor
+        pokeBallRedLayer.strokeColor = UIColor.black.cgColor
+        pokeBallRedLayer.lineWidth = 3
+        
+        let pokeBallWhite = UIBezierPath(arcCenter: CGPoint(x: 214, y: 500), radius: 40, startAngle: aDegree * 0, endAngle: aDegree * 180, clockwise: true)
+        
+        let pokeBallWhiteLayer = CAShapeLayer()
+        pokeBallWhiteLayer.path = pokeBallWhite.cgPath
+        pokeBallWhiteLayer.fillColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1).cgColor
+        pokeBallWhiteLayer.strokeColor = UIColor.black.cgColor
+        pokeBallWhiteLayer.lineWidth = 3
+        
+        let pokeBallButton = UIBezierPath(arcCenter: CGPoint(x: 214, y: 500), radius: 10, startAngle: aDegree * 0, endAngle: aDegree * 360, clockwise: true)
+        
+        let pokeBallButtonLayer = CAShapeLayer()
+        pokeBallButtonLayer.path = pokeBallButton.cgPath
+        pokeBallButtonLayer.fillColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1).cgColor
+        pokeBallButtonLayer.strokeColor = UIColor.black.cgColor
+        pokeBallButtonLayer.lineWidth = 3
+        
+        pokeBallRedLayer.addSublayer(pokeBallWhiteLayer)
+        pokeBallRedLayer.addSublayer(pokeBallButtonLayer)
+        view.layer.addSublayer(pokeBallRedLayer)
 
         
         return view
